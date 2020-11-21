@@ -13,7 +13,7 @@ let minutes = currentDate.getMinutes();
 let dateString = date + "-" +(month + 1) + "-" + year+"_"+hours+""+minutes+""+seconds;
 let filename= date+"-"+hours+""+minutes+""+seconds;
 
-
+const port = process.env.PORT || 3000;
 
 
 // To create txt file and to write timestamp content in it
@@ -42,4 +42,4 @@ http.createServer(function(req,res){
     res.writeHead(200,{'content-Type':'text-html'})
     res.write(`<h1>${s} </h1>`)
     res.end()
-}).listen(8080)
+}).listen(port);
